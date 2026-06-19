@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Choose a Gift 🎁</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+background:linear-gradient(
+135deg,
+#FFFDF8 0%,
+#FFF4B5 45%,
+#FFD6E8 100%
+);
+overflow:hidden;
+
+}
+
+h1{
+
+margin-bottom:50px;
+
+color:#D7263D;
+
+}
+h1,h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+}
+.gifts{
+
+display:flex;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.gifts{
+
+display:flex;
+
+gap:50px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.cupcake-card{
+
+background:#FFFDF8;
+
+padding:25px;
+
+border-radius:25px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+cursor:pointer;
+
+transition:.35s;
+
+width:220px;
+
+}
+
+.cupcake-card:hover{
+
+transform:translateY(-12px) scale(1.05);
+
+}
+
+.cupcake-card img{
+
+width:140px;
+
+height:140px;
+
+object-fit:contain;
+
+}
+
+.cupcake-card h3{
+
+margin-top:20px;
+
+color:#C6284A;
+
+}
+
+#message{
+
+margin-top:50px;
+
+font-size:25px;
+
+color:#D7263D;
+
+font-weight:600;
+
+text-align:center;
+
+padding:0 20px;
+
+}
+
+button{
+
+margin-top:40px;
+
+display:none;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:#D7263D;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+letter-spacing:1px;
+
+font-weight:500;
+
+box-shadow:0 10px 25px rgba(198,40,74,.15);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Okieee! now pick a cupcake... One of them is hiding a surprise 🧁✨</h1>
+
+<div class="gifts">
+
+<div class="cupcake-card" onclick="gift1()">
+
+<img src="images/cupcakes/cupcake1.png">
+
+<h3>Strawberry Bliss</h3>
+
+</div>
+
+<div class="cupcake-card" onclick="gift2()">
+
+<img src="images/cupcakes/cupcake2.png">
+
+<h3>Vanilla Dream</h3>
+
+</div>
+
+<div class="cupcake-card" onclick="gift3()">
+
+<img src="images/cupcakes/cupcake3.png">
+
+<h3>Choco Delight</h3>
+
+</div>
+
+</div>
+
+<div id="message"></div>
+
+<button id="nextBtn" onclick="nextPage()">
+ippo paaklama 🍰
+</button>
+
+<script>
+
+const msg=document.getElementById("message");
+
+const btn=document.getElementById("nextBtn");
+
+function gift1(){
+
+    msg.innerHTML="🍓 Ahehh sweet choice... but the surprise isn't here!";
+
+}
+
+function gift2(){
+
+    msg.innerHTML="🤍 Almost! Thappuuuuu";
+
+}
+
+function gift3(){
+
+    msg.innerHTML="🎉 Hehe! inga dhaa gift uh";
+
+    btn.style.display="inline-block";
+
+}
+
+function nextPage(){
+
+window.location.href="memorybox.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

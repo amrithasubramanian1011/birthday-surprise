@@ -1,0 +1,314 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+html{
+
+scroll-behavior:smooth;
+
+}
+*{
+
+user-select:none;
+
+}
+body{
+    font-family:'Poppins',sans-serif;
+    background:
+radial-gradient(circle at top left,#FFF4B5 0%,transparent 35%),
+radial-gradient(circle at bottom right,#FFD6E8 0%,transparent 35%),
+
+#FFFDF8;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.title{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.title h1{
+font-family:'Cormorant Garamond',serif;
+font-size:72px;
+font-weight:700;
+color:#C6284A;
+letter-spacing:1px;
+margin-bottom:8px;
+}
+
+.title p{
+font-family:'Caveat',cursive;
+font-size:34px;
+color:#6A5146;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(2,320px);
+    justify-content:center;
+    gap:35px;
+    margin:30px auto 50px auto;
+    transition:.5s;
+}
+
+.polaroid{
+    background:#FFFDF8;
+    padding:18px 18px 28px 18px;
+    border-radius:22px;
+    box-shadow:0 18px 40px rgba(0,0,0,.10);
+    transition:.4s;
+    position:relative;
+    backdrop-filter:blur(8px);
+    animation:float 5s ease-in-out infinite;
+}
+
+.polaroid:hover{
+
+transform:translateY(-12px) rotate(0deg);
+
+box-shadow:0 25px 50px rgba(198,40,74,.18);
+
+}
+
+.polaroid img{
+    width:100%;
+    aspect-ratio:9/16;
+    max-height:420px;
+    object-fit:cover;
+    object-position:center;
+    border-radius:12px;
+    display:block;
+}
+
+.caption{
+margin-top:15px;
+text-align:center;
+font-family: 'Dancing Script';
+font-size:24px;
+letter-spacing:1px;
+color:#7A5A4A;
+padding:8px;
+}
+
+.next-container{
+display:flex;
+justify-content:center;
+margin:60px 0;
+}
+
+#nextBtn{
+background:#C6284A;
+color:#FFFDF8;
+border:none;
+padding:15px 45px;
+border-radius:50px;
+font-family:'Cormorant Garamond',serif;
+font-size:28px;
+letter-spacing:1px;
+cursor:pointer;
+transition:.4s;
+box-shadow:0 12px 25px rgba(198,40,74,.15);
+font-weight:500;
+}
+
+#nextBtn:hover{
+transform:translateY(-4px);
+background:#B71C3C;
+}
+
+#nextBtn:hover{
+transform:scale(1.05);
+}
+
+.blob1{
+position:fixed;
+width:420px;
+height:420px;
+background:#FFF4B5;
+border-radius:50%;
+top:-180px;
+left:-120px;
+opacity:.6;
+filter:blur(80px);
+z-index:-1;
+}
+
+.blob2{
+position:fixed;
+width:380px;
+height:380px;
+background:#FFD6E8;
+border-radius:50%;
+bottom:-150px;
+right:-100px;
+opacity:.6;
+filter:blur(80px);
+z-index:-1;
+}
+@keyframes float{
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-8px);
+}
+100%{
+transform:translateY(0px);
+}
+}
+
+.quote-card{
+width:65%;
+max-width:720px;
+margin:20px auto 40px auto;
+padding:22px 35px;
+background:rgba(255,253,248,.55);
+backdrop-filter:blur(12px);
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.quote-card p{
+font-family: 'Times New Roman', Times, serif;
+font-size:20px;
+line-height:1.6;
+text-align:center;
+color:#5A3E36;
+font-style:italic;
+}
+
+.polaroid::before{
+content:"";
+width:16px;
+height:16px;
+background:#C6284A;
+border-radius:50%;
+position:absolute;
+top:8px;
+left:50%;
+transform:translateX(-50%);
+box-shadow:0 3px 8px rgba(0,0,0,.2);
+}
+
+.polaroid{
+opacity:0;
+animation:fadePhoto .8s forwards;
+}
+
+.polaroid:nth-child(1){
+animation-delay:.2s;
+}
+
+.polaroid:nth-child(2){
+animation-delay:.6s;
+}
+
+.polaroid:nth-child(3){
+animation-delay:1s;
+}
+
+.polaroid:nth-child(4){
+animation-delay:1.4s;
+}
+@keyframes fadePhoto{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.page-number{
+text-align:center;
+font-family:'Cormorant Garamond',serif;
+font-size:24px;
+color:#b860b8;
+margin-top:-10px;
+margin-bottom:30px;
+letter-spacing:2px;
+}
+
+.star{
+position:fixed;
+width:8px;
+height:8px;
+background:#F7D774;
+border-radius:50%;
+box-shadow:
+0 0 8px #F7D774,
+0 0 18px #F7D774;
+animation:twinkle 4s infinite;
+pointer-events:none;
+z-index:-1;
+}
+
+.star:nth-child(1){
+top:10%;
+left:12%;
+}
+
+.star:nth-child(2){
+top:25%;
+right:18%;
+animation-delay:1s;
+}
+
+.star:nth-child(3){
+bottom:15%;
+left:20%;
+animation-delay:2s;
+}
+
+.star:nth-child(4){
+bottom:18%;
+right:15%;
+animation-delay:3s;
+}
+
+@keyframes twinkle{
+0%{
+opacity:.2;
+transform:scale(.8);
+}
+
+50%{
+opacity:1;
+transform:scale(1.5);
+}
+
+100%{
+opacity:.2;
+transform:scale(.8);
+}
+}
+
+body{
+
+animation:fadePage .8s ease;
+
+}
+
+@keyframes fadePage{
+
+from{
+
+opacity:0;
+
+transform:translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
